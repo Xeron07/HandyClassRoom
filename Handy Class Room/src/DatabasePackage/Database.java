@@ -65,6 +65,7 @@ public class Database {
     
     public boolean execute(String sql){
         try{
+            this.createConnection();
             this.stmt.executeUpdate(sql);
             return true;
         }catch(Exception e){

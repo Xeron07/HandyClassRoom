@@ -114,6 +114,14 @@ public class DataClass extends Database{
 //       }
        
        }
+       
+       public boolean insert(String sql){
+           if(this.execute(sql))
+               return true;
+           return false;
+       }
+       
+      
 }
     
  

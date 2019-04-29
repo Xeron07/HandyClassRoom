@@ -5,6 +5,7 @@
  */
 package Login;
 import javax.swing.*;
+import Registration.*;
 import Users.Student.*;
 import Users.Teacher.*;
 /**
@@ -46,6 +47,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         passField = new javax.swing.JPasswordField();
+        registerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,6 +70,13 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("MS Reference Sans Serif", 1, 24)); // NOI18N
         jLabel3.setText("Log In ");
 
+        registerButton.setText("Registration");
+        registerButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,16 +84,17 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel1)
                             .addComponent(emailField)
                             .addComponent(loginButton, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                             .addComponent(jLabel2)
-                            .addComponent(passField)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel3)))
+                            .addComponent(passField)
+                            .addComponent(registerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -102,7 +112,9 @@ public class LoginForm extends javax.swing.JFrame {
                 .addComponent(passField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(loginButton)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(registerButton)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         emailField.getAccessibleContext().setAccessibleName("email");
@@ -142,6 +154,12 @@ public class LoginForm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_loginButtonClicked
 
+    private void registerButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerButtonMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new RegistrationGUI().setVisible(true);
+    }//GEN-LAST:event_registerButtonMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -154,5 +172,6 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     public javax.swing.JButton loginButton;
     public javax.swing.JPasswordField passField;
+    public javax.swing.JButton registerButton;
     // End of variables declaration//GEN-END:variables
 }
